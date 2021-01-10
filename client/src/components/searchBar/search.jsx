@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
-import {getProducts, lowToHigh, highToLow, byCondition} from '../../store/redux/actions'
+import {getProducts, lowToHigh, highToLow, oldCondition, newCondition} from '../../store/redux/actions'
 
 export default function SearchBar(){
 
@@ -25,12 +25,12 @@ export default function SearchBar(){
 
       const handleNew = async (e) => {
           e.preventDefault()
-          await dispatch(byCondition('new'))
+          await dispatch(newCondition('new'))
       }
 
       const handleUsed = async (e) => {
           e.preventDefault()
-          await dispatch(byCondition('used'))
+          await dispatch(oldCondition('used'))
       }
 
       const handleLow = async (e) => {

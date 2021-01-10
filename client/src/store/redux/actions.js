@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {GET_PRODUCTS, LOW_TO_HIGH, HIGH_TO_LOW, PRODUCT_CONDITION} from './types'
+import {GET_PRODUCTS, LOW_TO_HIGH, HIGH_TO_LOW, NEW_PRODUCTS, OLD_PRODUCTS} from './types'
 
 export function getProducts(query){
     return function(dispatch){
@@ -23,8 +23,14 @@ export function highToLow(){
     }
 }
 
-export function byCondition(condition){
+export function newCondition(condition){
     return function(dispatch){
-      dispatch({type:PRODUCT_CONDITION, payload:condition})
+      dispatch({type: NEW_PRODUCTS, payload:condition})
+    }
+}
+
+export function oldCondition(condition){
+    return function(dispatch){
+        dispatch({type: OLD_PRODUCTS, payload:condition})
     }
 }

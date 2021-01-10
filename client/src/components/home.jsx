@@ -9,7 +9,7 @@ export default function Home(){
 
     const [loading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [productsPerPage] = useState(30);
+    const [productsPerPage] = useState(50);
 
     const productos = useSelector(state => state.products);
     
